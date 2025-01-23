@@ -5,7 +5,8 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     private bool cansalt = true;
-    public int salty =5;
+    public int salty = (5);
+    
 
     // Start is called before the first frame update
 
@@ -26,5 +27,14 @@ public class spawner : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter (Collider other)
+    {
+        if (other.gameObject.CompareTag ("refill"))
+        {
+            salty = (5);
+        }
+
+    }
+    
     
 }
