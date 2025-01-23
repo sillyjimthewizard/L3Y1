@@ -26,13 +26,5 @@ public class spawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("refill"))
-        {
-            salty = (salty + 5);
-
-        }
-
-    }
+    
 }
