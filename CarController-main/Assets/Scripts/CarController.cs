@@ -124,4 +124,17 @@ public class CarController : MonoBehaviour
 
     }
 
+    public void OnCollisionEnter (Collider other)
+    {
+        if (other.gameObject.CompareTag ("snail"))
+        {
+           Destroy(gameObject);
+           Debug.Log(gameObject + " hasn't beed destroyed yet!");
+        }
+
+    }
+
+
+
+
 }

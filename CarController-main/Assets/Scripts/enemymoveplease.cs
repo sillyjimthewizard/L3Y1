@@ -15,7 +15,7 @@ public class enemymoveplease : MonoBehaviour
 
     private void Awake ()
     {
-        
+        movePositionTransform = GameObject.Find("Car").gameObject.transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -23,7 +23,8 @@ public class enemymoveplease : MonoBehaviour
     private void Update()
     {
         navMeshAgent.destination = movePositionTransform.position;
-        
+        //gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = target.transform.position;
+ 
 
 
     }
