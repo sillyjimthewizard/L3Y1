@@ -9,6 +9,9 @@ public class enemymoveplease : MonoBehaviour
 
      [SerializeField] private Transform movePositionTransform;
 
+    public AudioSource deathnoise;
+    
+
      private NavMeshAgent navMeshAgent;
      
 
@@ -16,7 +19,11 @@ public class enemymoveplease : MonoBehaviour
     private void Awake ()
     {
         movePositionTransform = GameObject.Find("Car").gameObject.transform;
+        
+        
+        
         navMeshAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
@@ -33,10 +40,22 @@ public class enemymoveplease : MonoBehaviour
     {
         if (other.gameObject.CompareTag ("salt"))
         {
-           Destroy(gameObject);
-           Debug.Log(gameObject + " hasn't beed destroyed yet!");
+           deathnoise.Play();
+           //gameObject.SetActive(false);
+           //Destroy(gameObject);
+           Invoke("destroyObject", 0.39f);
+           
+           
         }
 
     }
+
+    public void destroyObject ()
+    {
+        Destroy(gameObject);
+
+    }
+
+
 
 }

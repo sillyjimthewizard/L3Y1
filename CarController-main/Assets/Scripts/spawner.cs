@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
+
+   [Header ("ammo")]
     private bool cansalt = true;
     public int salty = (5);
+    [Header ("audio")]
+    public AudioSource saltnoise;
     
 
     // Start is called before the first frame update
@@ -18,6 +22,7 @@ public class spawner : MonoBehaviour
 
             salty = (salty - 1);
             Instantiate(cubePrefab, transform.position, Quaternion.identity);
+            saltnoise.Play();
 
         }
     
