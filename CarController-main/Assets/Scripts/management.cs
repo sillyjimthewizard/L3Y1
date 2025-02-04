@@ -6,18 +6,32 @@ using UnityEngine.UI;
 
 public class management : MonoBehaviour
 {
+    public GameObject otherGameObject;
 
-    public Enemy snailscript;
+    public int GameState = 0; // 0 = main menu, 1 = game, 2 = upgrades, 3 = deathscreen
+
+   public int kills = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-      snailscript = GameObject.Find("Enemy").GetComponent<enemymoveplease>();
+     enemymoveplease snailscript = otherGameObject.GetComponent<enemymoveplease>();
+     //NavMeshAgent navmeshmove = otherGameObject.GetComponent<NavMeshAgent>();
     }
 
+     
     // Update is called once per frame
     void Update()
     {
-        
+         if(Input.GetKeyDown("k"))
+        {
+         ResetGame();
+            
+        }
+    }
+
+    public void ResetGame()
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -11,6 +11,7 @@ public class enemymoveplease : MonoBehaviour
 
     public AudioSource deathnoise;
     
+    public int kills = 0;
 
      private NavMeshAgent navMeshAgent;
      
@@ -44,7 +45,7 @@ public class enemymoveplease : MonoBehaviour
            //gameObject.SetActive(false);
            //Destroy(gameObject);
            Invoke("destroyObject", 0.39f);
-           
+           kills = (kills+1);
            
         }
 

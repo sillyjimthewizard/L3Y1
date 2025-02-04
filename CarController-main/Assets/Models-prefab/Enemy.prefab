@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 274159387651264271, guid: f38966b38d58d28449424420eed818cc,
         type: 3}
       propertyPath: m_Name
-      value: the snail Variant
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 274159387651264271, guid: f38966b38d58d28449424420eed818cc,
         type: 3}
