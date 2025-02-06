@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class playercollision : MonoBehaviour
 {
+    management manager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("GameManager").GetComponent<management>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnTriggerEnter (Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag ("snail"))
         {
-            // ui
-           Destroy(gameObject);
-           Debug.Log(gameObject + " hasn't beed destroyed yet!");
+            manager.gameState = 3;
+            
         }
 
     }

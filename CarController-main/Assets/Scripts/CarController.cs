@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public GameObject otherGameObject;
+    // management manager;
 
     private Rigidbody theRB; // this is the RigidBody that control everything. Do not touch.
 
@@ -38,6 +40,7 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+        // manager = otherGameObject.GetComponent<management>();
         theRB = gameObject.GetComponentInChildren<Rigidbody>(); //grabs the Rigidbody in the Sphere that is a child of the main gameObject.
         theRB.transform.parent = null; //moves the sphere out of the parent into the root. 
         groundRayPoint = GameObject.Find("ray point").transform; // finds the raycast point for grounded.
@@ -124,15 +127,25 @@ public class CarController : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter (Collider other)
-    {
-        if (other.gameObject.CompareTag ("snail"))
-        {
-           Destroy(gameObject);
-           Debug.Log(gameObject + " hasn't beed destroyed yet!");
-        }
+    // public void OnCollisionEnter (Collider other)
+    // {
+    //     if (other.gameObject.CompareTag ("snail"))
+    //     {
+    //         // ui
+    //        Debug.Log(gameObject + " hasn't beed destroyed yet!");
+    //         manager.gameState = 3;
+    //         // Invoke("destroyObject", 0.39f);
+           
+           
+    //     }
 
-    }
+    // }
+
+    // public void destroyObject()
+    // {
+    //     Destroy(gameObject);
+
+    // }
 
 
 
