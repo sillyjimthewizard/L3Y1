@@ -138,4 +138,9 @@ public class management : MonoBehaviour
 		//ManageUI(1);
 	}
 
+	public void RestartBtn()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
 }
